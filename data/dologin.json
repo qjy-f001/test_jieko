@@ -1,0 +1,5 @@
+{
+  "url":"http://127.0.0.1:8000/dologin",
+  "data":{"shop_id":"1","username":"zhangsan","pass":"123"},
+  "expect":200
+}
