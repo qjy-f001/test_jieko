@@ -3,9 +3,10 @@ import json
 
 def read_json(filename):
     # 打开 获取文件流
-    with open("../data/"+filename,"r", encoding="utf-8")as f:
+    with open("../data/" + filename, "r", encoding="utf-8")as f:
         # 调用json.load()
         return json.load(f)
+
 
 if __name__ == '__main__':
     print(read_json("login.json"))

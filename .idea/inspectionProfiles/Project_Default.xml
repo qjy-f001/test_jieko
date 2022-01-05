@@ -6,6 +6,7 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="webAutoTestTPshop.base.base_page.*" />
+          <option value="tool.HTMLTestRunner.reload" />
         </list>
       </option>
     </inspection_tool>

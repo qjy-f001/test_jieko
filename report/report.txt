@@ -1,7 +1,0 @@
-test_login_0_http_ttapi_research_itcast_cn_app_v1_0_authorizations (test01_login.TestLogin) ... ok
-test_get_channels (test02_channels.TestChannels) ... ok
-
-----------------------------------------------------------------------
-Ran 2 tests in 0.072s
-
-OK

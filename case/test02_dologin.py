@@ -2,6 +2,7 @@
 import unittest
 
 import api
+import case
 from api.api_dologin import ApiDologin
 from parameterized import parameterized
 
@@ -23,27 +24,27 @@ class TestLogin(unittest.TestCase):
 
     # 测试方法
     @parameterized.expand(get_data())
-    def test_login(self, url, data, expect):
+    def test_dologin(self, url, data, expect):
         # 调用登录方法
         response = self.dologin.api_post_dologin(url, data)
-        print(url, data)
+        # print(url, data)
         # 断言 响应状态码
         self.assertEqual(response.status_code, expect)
         # 断言 响应信息
-        # print(response.text)
-        print(response.cookies.get("sessionid"))
+        print(response.status_code)
+        # print(response.cookies.get("sessionid"))
 
         # self.assertEqual(expect, response.json().get("sessionid"))
 
         # # 第一步 单独获取token
-        token = response.cookies.get("sessionid")
-
+        # token = response.cookies.get("sessionid")
+        #
         # # 第二步 将 token 添加到 headers字典中
-        # api.headers['Authorization'] = "Bearer " + token
+        # api.headers['Cookie'] = "sessionid=" + token
 
         # 一条语句 解决 token问题
-        # case.headers['Authorization'] = "Bearer " +response.json().get("data").get("token")
+        case.headers['Cookie'] = "sessionid=" + response.cookies.get("sessionid")
 
         # print("动态设置的headers值为：", case.headers)
-        # print("获取的token值为：", token)
-        # print("响应结果：", response.json())
+        # # print("获取的token值为：", token)
+        # print("响应结果：", case.headers['Cookie'])
