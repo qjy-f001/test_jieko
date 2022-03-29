@@ -16,7 +16,7 @@ def get_data():
 
 
 # 新建测试类 继承
-class TestLogin(unittest.TestCase):
+class TestDoLogin(unittest.TestCase):
     # 初始化方法
     def setUp(self):
         # 实例化ApiLogin对象
@@ -28,6 +28,7 @@ class TestLogin(unittest.TestCase):
         # 调用登录方法
         response = self.dologin.api_post_dologin(url, data)
         # print(url, data)
+        # print(response.headers)
         # 断言 响应状态码
         self.assertEqual(response.status_code, expect)
         # 断言 响应信息

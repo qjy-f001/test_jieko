@@ -12,6 +12,8 @@ suite = unittest.defaultTestLoader.discover('./')
 now_time = time.strftime('%Y%m%d_%H%M%S')  # 获取时间戳, 防止报告重名被覆盖
 report_name = '../report/report{}.html'.format(now_time)
 
+# unittest.TextTestRunner().run(suite)
+
 # 打开报告写入文件流
 # 注意: wb 以二进制形式写入内容到文件
 with open(report_name, 'wb') as f:
@@ -33,7 +35,7 @@ with open(report_name, 'wb') as f:
     runner = HTMLTestReportCN(stream=f,
                               verbosity=2,
                               title='Web 自动化测试报告',
-                              description='系统:Windows 版本:3.9 编程语言:Python',
+                              description='系统:macOS 浏览器:谷歌 编程语言:Python',
                               tester='QA')
     # 调用执行方法生成测试报告
     runner.run(suite)
